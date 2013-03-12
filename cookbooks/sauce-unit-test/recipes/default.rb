@@ -3,6 +3,13 @@ remote_file "/opt/jenkins.war" do
 	source "http://mirrors.jenkins-ci.org/war/latest/jenkins.war"
 end
 
+directory "/root/.jenkins/jobs" do
+	recursive true
+end
 
-execute "java -jar /opt/jenkins.war &" do
+template "/root/.jenkins/jobs/config.xml" do
+	source "config.xml.erb"
+end
+
+execute "java -jar /opt/jenkins.war --httpPort=9099 &" do
 end
