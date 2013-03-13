@@ -15,8 +15,6 @@ template "/opt/jenkins-job-config.xml" do
 	source "config.xml.erb"
 end
 
-execute "java -jar /opt/jenkins-cli.jar -s http://localhost:9099/ delete-job sauce-unit-test" do
-end
-
 execute "java -jar /opt/jenkins-cli.jar -s http://localhost:9099/ create-job sauce-unit-test < /opt/jenkins-job-config.xml" do
+	ignore_failure true
 end
