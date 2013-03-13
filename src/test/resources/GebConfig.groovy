@@ -30,4 +30,15 @@ environments {
 		}
 	}
 
+	'windows-ie-9' {
+
+		driver = { 
+	        DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
+			capabilities.setCapability('platform', 'Windows 2008')
+			capabilities.setVersion('9')
+
+			new RemoteWebDriver(new URL("http://${sauceUsername}:${sauceApiKey}@ondemand.saucelabs.com:80/wd/hub"), capabilities) 
+		}
+	}
+
 }
