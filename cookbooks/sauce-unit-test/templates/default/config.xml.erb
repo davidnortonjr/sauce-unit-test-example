@@ -7,15 +7,15 @@
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <hudson.model.StringParameterDefinition>
-          <name>sauce.username</name>
-          <description></description>
+          <name>SAUCE_USERNAME</name>
+          <description>Your Sauce username</description>
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
-          <name>sauce.apiKey</name>
-          <description></description>
-          <defaultValue></defaultValue>
-        </hudson.model.StringParameterDefinition>
+        <hudson.model.PasswordParameterDefinition>
+          <name>SAUCE_API_KEY</name>
+          <description>Your Sauce API key</description>
+          <defaultValue>ymVnm+e+0NsWVmHGZIA04g==</defaultValue>
+        </hudson.model.PasswordParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
@@ -35,11 +35,11 @@
       </values>
     </hudson.matrix.TextAxis>
   </axes>
-    <builders>
+  <builders>
     <hudson.tasks.Shell>
       <command>cd /opt/sauce-unit-test/
 
-./gradlew clean test</command>
+./gradlew clean test -Dgeb.env=$browser -Dsauce.username=$SAUCE_USERNAME -Dsauce.apiKey=$SAUCE_API_KEY</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
