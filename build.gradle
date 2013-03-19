@@ -52,8 +52,6 @@ task gebTest(type: Test) {
     systemProperty 'geb.env', System.getProperty('geb.env')
     systemProperty 'sauce.username', sauce.username
     systemProperty 'sauce.apiKey', sauce.apiKey
-
-    systemProperty 'geb.build.baseUrl', 'http://localhost:8080'
 }
 
 task test(overwrite: true, dependsOn: [tasks['gebTest']])
