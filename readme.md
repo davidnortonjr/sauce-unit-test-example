@@ -1,4 +1,4 @@
-This is an example integrating Sauce automated browser testing with the Jasmine testing framework for JavaScript.
+This is an example integrating Sauce automated browser testing with the Jasmine testing framework for JavaScript. It was developed for my article on the Object Partners blog: http://www.objectpartners.com/2013/04/18/multi-browser-javascript-unit-testing-with-sauce/
 
 ### Run JavaScript tests in your browser
 
